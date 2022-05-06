@@ -50,6 +50,9 @@ An interactive, 3D art gallery featuring paintings and sketchings that I have do
 
 See and play with my deployed demo at: https://cynthia-3d-art-gallery.netlify.app/
 
+
+https://user-images.githubusercontent.com/20048911/167222076-aeb6a9a5-eb95-452f-88c9-d582e9ce5bf2.mp4
+
 ![Alt Text](demo.gif)
 
 ## :sparkles: Features ##
