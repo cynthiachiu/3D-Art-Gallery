@@ -186,7 +186,7 @@ function App() {
 
       <EffectComposer>
         {/* <Noise opacity={0.01} /> */}
-        <Vignette eskil={false} offset={0.1} darkness={1} />
+        <Vignette eskil={false} offset={0.1} darkness={0.5} />
       </EffectComposer>
 
       <Rig />
