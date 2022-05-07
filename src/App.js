@@ -107,6 +107,8 @@ const WallArt = (props) => {
 
 const Scene = () => {
   const { width: screenWidth } = useThree((state) => state.viewport);
+  console.log("screenWidth", screenWidth)
+  const textScale = screenWidth < 5.5 ? 2 : 4
 
   return (
     <Suspense fallback={
@@ -120,7 +122,7 @@ const Scene = () => {
             position-z={0}
             anchorX="center"
             anchorY="bottom"
-            scale={[4, 4, 4]}
+            scale={[textScale, textScale, textScale]}
             color="#94A6FF"
             font="https://fonts.gstatic.com/s/sacramento/v5/buEzpo6gcdjy0EiZMBUG4C0f-w.woff"
             castShadow
@@ -131,7 +133,7 @@ const Scene = () => {
             position-z={1}
             anchorX="center"
             anchorY="top"
-            scale={[4, 4, 4]}
+            scale={[textScale, textScale, textScale]}
             color="#FBA90A"
             // font="https://fonts.gstatic.com/s/cookie/v8/syky-y18lb0tSbf9kgqU.woff"
             font="https://fonts.gstatic.com/s/sacramento/v5/buEzpo6gcdjy0EiZMBUG4C0f-w.woff"
