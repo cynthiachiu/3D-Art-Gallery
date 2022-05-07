@@ -49,6 +49,10 @@ const ART_PIECES = [
     title: 'Wanderlust',
     imgPath: '/wonder.jpeg',
   },
+  {
+    title: 'Serenity',
+    imgPath: '/forest.jpeg',
+  },
 ]
 
 const WallArt = (props) => {
@@ -67,7 +71,7 @@ const WallArt = (props) => {
           angle={0.6}
           attenuation={1}
           anglePower={5}
-          intensity={20}
+          intensity={10}
           distance={10}
           castShadow
           color={0xffffff}
@@ -102,13 +106,15 @@ const WallArt = (props) => {
 }
 
 const Scene = () => {
+  const { width: screenWidth } = useThree((state) => state.viewport);
+
   return (
     <Suspense fallback={
       <Html style={{ fontSize: '6vw', whiteSpace: 'nowrap', color: 'white' }} center>
         Loading 3D Art Gallery...
       </Html>
     }>
-      <ScrollControls infinite horizontal damping={4} pages={7} distance={1}>
+      <ScrollControls infinite horizontal damping={4} pages={39*Math.exp(-0.11 * screenWidth) } distance={1}>
         <Scroll>
           <Text
             position-z={0}
@@ -179,8 +185,8 @@ function App() {
       <Scene />
 
       <EffectComposer>
-        <Noise opacity={0.05} />
-        <Vignette eskil={false} offset={0.1} darkness={0.5} />
+        {/* <Noise opacity={0.01} /> */}
+        <Vignette eskil={false} offset={0.1} darkness={1} />
       </EffectComposer>
 
       <Rig />
